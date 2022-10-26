@@ -35,7 +35,10 @@ else:
   total += 25
 
 if add_pepperoni == "Y":
-  total += 3
+  if size == "S":
+    total += 2
+  else:
+    total += 3
 
 if extra_cheese == "Y":
   total += 1
