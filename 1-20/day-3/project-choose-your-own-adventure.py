@@ -38,3 +38,4 @@ if left_or_right == "L":
     print(f"You shoulda waited {name} cuz you're super dead now")
 else:
   print(f"You're dead, {name}")
+
