@@ -17,10 +17,28 @@ password = ""
 for letter in range(0, nr_letters):
   password += letters[random.randint(0, len(letters) - 1)]
 
-for symbol in range(0, nr_symbols):
+for symbol in range(1, nr_symbols + 1):
   password += symbols[random.randint(0, len(symbols) - 1)]
 
-for number in range(0, nr_numbers):
-  password += symbols[random.randint(0, len(numbers) - 1)]
+for number in range(1, nr_numbers + 1):
+  password += numbers[random.randint(0, len(numbers) - 1)]
 
 print("Here is your password: " + ''.join(random.sample(password, len(password))))
+
+# alt method
+
+alt_pw = []
+for char in range(1, nr_letters + 1):
+  alt_pw.append(random.choice(letters))
+for char in range(1, nr_symbols + 1):
+  alt_pw.append(random.choice(symbols))
+for num in range(1, nr_numbers + 1):
+  alt_pw.append(random.choice(numbers))
+
+random.shuffle(alt_pw)
+alt_pw_shuffled = ""
+
+for char in alt_pw:
+  alt_pw_shuffled += char
+
+print(f"Your alt password is {alt_pw_shuffled}")
