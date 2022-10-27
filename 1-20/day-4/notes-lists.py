@@ -10,3 +10,10 @@ print(f"Hi, we're in {delaware}")
 
 us_states.append("United States of Tim")
 print(us_states)
+
+
+fruits = ["Strawberries", "Nectarines", "Apples", "Grapes", "Peaches", "Cherries", "Pears", "Tomatoes"]
+vegetables = ["Spinach", "Kale", "Celery", "Potatoes"]
+
+dirty_dozen = [fruits, vegetables]
+print(dirty_dozen)
