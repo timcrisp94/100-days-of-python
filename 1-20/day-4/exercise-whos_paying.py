@@ -23,3 +23,7 @@ names = names_string.split(", ")
 num_of_people = len(names)
 lucky_num = random.randint(0, num_of_people - 1)
 print(f"Dinner's on {names[lucky_num]}")
+
+# alt method
+person_who_pays = random.choice(names)
+print(person_who_pays + " is going to pay")
