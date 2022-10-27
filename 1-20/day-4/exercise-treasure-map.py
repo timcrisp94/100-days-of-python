@@ -68,3 +68,13 @@ col = int(position[1]) - 1
 
 map[col][row] = "X "
 print(f"{row1}\n{row2}\n{row3}")
+
+# or
+
+horizontal = int(position[0])
+vertical = int(position[1])
+
+selected_row = map[vertical - 1]
+selected_row[horizontal - 1] = "X "
+
+print(f"{row1}\n{row2}\n{row3}")
