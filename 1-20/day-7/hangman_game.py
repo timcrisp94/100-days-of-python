@@ -1,17 +1,15 @@
 import random
-import hangman_art
 import hangman_words
-
-# art
-stages = hangman_art.stages
-art = hangman_art.art
+from hangman_art import logo, stages
 
 # generate a random word
 word_list = hangman_words.word_list
 chosen_word = word_list[random.randint(0, (len(word_list) - 1))]
 
+print(logo)
+
 #Testing code
-print(f'Pssst, the solution is {chosen_word}.')
+# print(f'Pssst, the solution is {chosen_word}.')
 
 # display
 display = []
@@ -30,24 +28,28 @@ while not end_of_game:
   # ask the user to guess a letter
   guess = input("Player, guess a letter ").lower()
 
+  if guess in display:
+    print(f"You already guessed {guess}")
+
   # check guessed letter
   for position in range(word_len):
     letter = chosen_word[position]    
     if letter == guess:
       display[position] = letter
   
-  # guess not in chosen_word decrease lives 
+  # check if user is wrong 
   if guess not in chosen_word:
     lives -= 1
-    print(stages[lives])
+    print(f"{guess} is not in the word. You have {lives} lives left.\n{stages[lives]}")
 
   #join all the elements in the list and turn it into a string.
   print(f"{' '.join(display)}")
 
   if "_" not in display:
     end_of_game = True
-    print("You win")
+    print("You win!")
 
   if lives == 0:
     end_of_game = True
-    print("You lose")
+    print(f"You lose! The word was {chosen_word}")
+
