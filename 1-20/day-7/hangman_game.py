@@ -1,8 +1,13 @@
 import random
-import stages
+import hangman_art
+import hangman_words
+
+# art
+stages = hangman_art.stages
+art = hangman_art.art
 
 # generate a random word
-word_list = ["aardvark", "baboon", "camel"]
+word_list = hangman_words.word_list
 chosen_word = word_list[random.randint(0, (len(word_list) - 1))]
 
 #Testing code
@@ -34,7 +39,7 @@ while not end_of_game:
   # guess not in chosen_word decrease lives 
   if guess not in chosen_word:
     lives -= 1
-    print(stages.stages[lives])
+    print(stages[lives])
 
   #join all the elements in the list and turn it into a string.
   print(f"{' '.join(display)}")
