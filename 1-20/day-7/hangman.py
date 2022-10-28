@@ -7,29 +7,27 @@ chosen_word = word_list[random.randint(0, (len(word_list) - 1))]
 #Testing code
 print(f'Pssst, the solution is {chosen_word}.')
 
-#TODO-1: - Create an empty List called display.
-#For each letter in the chosen_word, add a "_" to 'display'.
-#So if the chosen_word was "apple", display should be ["_", "_", "_", "_", "_"] with 5 "_" representing each letter to guess.
-
 display = []
 word_length = len(chosen_word)
 for _ in range(word_length):
   display += "_"
 print(display)
 
-guess = input("Player, guess a letter ").lower()
+end_of_game = False
 
-#TODO-2: - Loop through each position in the chosen_word;
-#If the letter at that position matches 'guess' then reveal that letter in the display at that position.
-#e.g. If the user guessed "p" and the chosen word was "apple", then display should be ["_", "p", "p", "_", "_"].
+while not end_of_game:
+  guess = input("Player, guess a letter ").lower()
+  # checked guessed letter
+  for position in range(word_length):
+    letter = chosen_word[position]
+    if letter == guess: 
+      display[position] = letter
 
-for position in range(word_length):
-  letter = chosen_word[position]
-  if letter == guess: 
-    display[position] = letter
+  print(display)
 
-print(display)
- 
+  if "_" not in display:
+    end_of_game = True
+    print("You win!")
 
 
 
