@@ -1,33 +1,48 @@
 import random
+import stages
 
+# generate a random word
 word_list = ["aardvark", "baboon", "camel"]
 chosen_word = word_list[random.randint(0, (len(word_list) - 1))]
-
 
 #Testing code
 print(f'Pssst, the solution is {chosen_word}.')
 
+# display
 display = []
-word_length = len(chosen_word)
-for _ in range(word_length):
-  display += "_"
-print(display)
+word_len = len(chosen_word)
 
+# display as many blanks as letters in word
+for _ in range(word_len):
+  display += '_'
+
+# lives and end_of_game
+lives = 6
 end_of_game = False
 
+# start game
 while not end_of_game:
+  # ask the user to guess a letter
   guess = input("Player, guess a letter ").lower()
-  # checked guessed letter
-  for position in range(word_length):
-    letter = chosen_word[position]
-    if letter == guess: 
-      display[position] = letter
 
-  print(display)
+  # check guessed letter
+  for position in range(word_len):
+    letter = chosen_word[position]    
+    if letter == guess:
+      display[position] = letter
+  
+  # guess not in chosen_word decrease lives 
+  if guess not in chosen_word:
+    lives -= 1
+    print(stages.stages[lives])
+
+  #join all the elements in the list and turn it into a string.
+  print(f"{' '.join(display)}")
 
   if "_" not in display:
     end_of_game = True
-    print("You win!")
+    print("You win")
 
-
-
+  if lives == 0:
+    end_of_game = True
+    print("You lose")
