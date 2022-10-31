@@ -5,18 +5,24 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 # combine encrypt and decrypt functions into single function called caesar
 def caesar(start_text, shift_amount, cipher_direction):
   end_text = ""
+  # if decode, switch shift_amount to neg. value
   if cipher_direction == "decode":
     shift_amount *= -1
+  # iterate start_text
   for char in start_text:
+    # if char is a symbol, preserve symbol
     if not char in alphabet:
       end_text += char
-    position = alphabet.index(char)
-    new_position = position + shift_amount
-    end_text += alphabet[new_position]
+    # find char[i]
+    i = alphabet.index(char)
+    # add char[i + shift_amount]
+    end_text += alphabet[i + shift_amount]
+    
   print(f"The {cipher_direction}d text is {end_text}")
 
 print(logo)
 
+# start game
 game_over = False
 while not game_over:
   direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
@@ -24,8 +30,10 @@ while not game_over:
   shift = int(input("Type the shift number:\n"))
   shift = shift % 26
 
+  # trigger caesar function with input arguments
   caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
 
+  # restart condition 
   restart = input("Want to play again? Type 'yes' if you want to play again. Otherwise type 'no' ")
   if restart == "no":
     game_over = True
