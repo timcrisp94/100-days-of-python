@@ -18,7 +18,7 @@ for key in student_scores:
     student_grades[key] = "Exceeds Expectations"
   elif student_scores[key] > 70:  
     student_grades[key] = "Acceptable"
-  if student_scores[key] < 70:  
+  else:  
     student_grades[key] = "Fail"
 
     
