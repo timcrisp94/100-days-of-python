@@ -4,28 +4,60 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
-#TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
 
-    #TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text.  
-    #e.g. 
-    #plain_text = "hello"
-    #shift = 5
-    #cipher_text = "mjqqt"
-    #print output: "The encoded text is mjqqt"
-
-    ##HINT: How do you get the index of an item in a list:
-    #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
-
-    ##🐛Bug alert: What happens if you try to encode the word 'civilization'?🐛
-
-#TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message.  
-
-# encrypt function
-def encrypt(text, shift):
-  cipher = ''
-  for char in text:
+# encrypt function 
+def encrypt(plain_text, shift_amount):
+  cipher_text = ''
+  for char in plain_text:
+    # shift forward
     for i, letter in enumerate(alphabet):
       if char == letter:
-        cipher += alphabet[i + 5]
-  print(cipher)
+        if i + shift_amount > 26:
+          cipher_text += alphabet[i + shift_amount - 26]
+        else:
+          cipher_text += alphabet[i + shift_amount]
+  print(f"the encoded text is {cipher_text}")
+
+# test encrypt function
+# encrypt(plain_text="zulu", shift_amount=5) 
+
+# decrypt function
+def decrypt(cipher_text, shift_amount):
+  plain_text = ''
+  for char in cipher_text:
+    # shift back
+    for i, letter in enumerate(alphabet):
+      if char == letter:
+        if i - shift_amount < 0:
+          plain_text += alphabet[26 + i - shift_amount]
+        else:
+          plain_text += alphabet[i - shift_amount]
+
+  print(f"the decoded text is {plain_text}")
+
+# test decrypt
+# decrypt(cipher_text="mjqqt", shift_amount=5)
+
+# encode or decode
+if direction == "encode":
+  encrypt(plain_text=text, shift_amount=shift)
+elif direction == "decode":
+  decrypt(cipher_text=text, shift_amount=shift)
+
+
+
+
+
+
+
+
+
+
+
+# alt method for index (encrypt)
+# for letter in plain_text:
+  # position = alphabet.index(letter)
+  # new_position = position + shift_amount
+  # new_letter = alphabet[new_position]
+  # cipher_text += new_letter
 
