@@ -29,19 +29,25 @@ operations = {
   "/": divide,
 }
 
+# num1 input
 num1 = int(input("what's the first number? "))
-num2 = int(input("what's the second number? "))
 
-# loop through dictionary, print keys, and ask what to do
+# loop through dictionary, print keys, and ask which operation
 for symbol in operations:
   print(symbol)
 operation_symbol = input("Pick an operation from the line above: ")
 
-# our method
-answer = operations[operation_symbol](num1, num2)
-print(f"{num1} {operation_symbol} {num2} = {answer}")
+# num2 input
+num2 = int(input("what's the second number? "))
 
-# their method
-# calculation_function = operations[operation_symbol]
-# answer2 = calculation_function(num1, num2)
-# print(f"{num1} {operation_symbol} {num2} = {answer2}")
+# first answer method
+calculation = operations[operation_symbol]
+first_answer = calculation(num1, num2)
+print(f"{num1} {operation_symbol} {num2} = {first_answer}")
+
+# second answer
+operation_symbol = input("Pick another operation: ")
+num3 = int(input("What's the next number? "))
+second_answer = calculation(first_answer, num3)
+print(f"{first_answer} {operation_symbol} {num3} = {second_answer}")
+
