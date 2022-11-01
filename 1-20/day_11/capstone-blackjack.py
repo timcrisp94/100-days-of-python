@@ -15,26 +15,39 @@ import random
 
 # clear function
 def clear():
-	# for windows
 	if name == 'nt':
 		_ = system('cls')
-	# for mac and linux(here, os.name is 'posix')
 	else:
 		_ = system('clear')
 
+# environment variables
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+player_score = 0
+computer_score = 0
 
 # game function
 def game():
   print(logo)
   def deal_cards():
-    player = [cards[random.choice(cards)], cards[random.choice(cards)]]
-    computer = [cards[random.choice(cards)], cards[random.choice(cards)]]
-    print(player, computer)
+    player_cards = [cards[random.choice(cards)], cards[random.choice(cards)]]
+    player_score = sum(player_cards)
 
+    computer_cards = [cards[random.choice(cards)], cards[random.choice(cards)]]
+    print(f"Your cards: {player_cards}, current score: {player_score}")
+    print(f"Computer's first card: {computer_cards[0]}")
   deal_cards()
 
-if input(f"Do you want to play a game of blackjack? Type 'y' or 'no' ") == 'y':
+  def blackjack(score):
+    if score == 21:
+      return True
+    else:
+      return False
+
+  print(blackjack(player_score))
+  print(blackjack(computer_score))
+
+# ask user if they want to start the game
+if input(f"Do you want to play a game of blackjack? Type 'y' or 'n' ") == 'y':
   game()
 
   
