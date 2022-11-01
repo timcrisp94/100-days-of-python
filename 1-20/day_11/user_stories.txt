@@ -1,0 +1,9 @@
+1. AAU I should be asked if I want to play a game of blackjack
+2. AAU I should be dealt two cards; I should see those cards as well as my current score
+2.1 AAU I should see the computer's first card
+2.2 AAU I should have the option to hit or stay
+2.3 AAU I should get another card if i choose to hit
+3. AAU I should see my final hand and final score (if I chose to stay)
+4. AAU I should see the computer's final hand and score
+4.1 AAU I should be told who won the game
+4.2 AAU I should have the option to play again
