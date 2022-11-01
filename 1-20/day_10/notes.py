@@ -1,5 +1,7 @@
 # functions with outputs
 def format_name(f_name, l_name):
+  """Take a first and last name and format it
+  to return the title case version of the name"""
   if f_name == "" or l_name == "":
     return "You did not provide valid input"
   formatted_f_name = f_name.title()
@@ -7,4 +9,14 @@ def format_name(f_name, l_name):
   
   return f"{formatted_f_name} {formatted_l_name}"
 
-print(format_name("tim", "CRISP"))
+format_name()
+
+"""
+don't 
+do
+multi
+line
+comments
+like
+this
+"""
