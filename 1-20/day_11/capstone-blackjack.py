@@ -43,8 +43,16 @@ def game():
     else:
       return False
 
-  print(blackjack(player_score))
-  print(blackjack(computer_score))
+  def over_21(score, cards):
+    if score > 21:
+      for card in cards:
+        if card == 11:
+          card = 1
+          score -= 10
+    return score
+
+  # test over_21
+  # print(over_21(26, [11, 10, 5]))
 
 # ask user if they want to start the game
 if input(f"Do you want to play a game of blackjack? Type 'y' or 'n' ") == 'y':
