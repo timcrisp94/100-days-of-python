@@ -31,6 +31,8 @@ operations = {
 
 # num1 input
 num1 = int(input("what's the first number? "))
+calculating = True
+
 
 # loop through dictionary, print keys, and ask which operation
 for symbol in operations:
@@ -45,9 +47,18 @@ calculation = operations[operation_symbol]
 first_answer = calculation(num1, num2)
 print(f"{num1} {operation_symbol} {num2} = {first_answer}")
 
+# continue calculating
+while calculating:
+  continue_calculating = input(f"Type 'y' to continue calculating with {first_answer}, or type 'n' to exit.: ")
+  if continue_calculating == 'y':
+    next_num = int(input("What's the next number? "))
+    operation_symbol = input("Pick another operation: ")
+    next_answer = calculation(first_answer, next_num)
+    print(f"{first_answer} {operation_symbol} {next_num} = {next_answer}")
+  else:
+    calculating = False
+    print('good-bye')
+
+
 # second answer
-operation_symbol = input("Pick another operation: ")
-num3 = int(input("What's the next number? "))
-second_answer = calculation(first_answer, num3)
-print(f"{first_answer} {operation_symbol} {num3} = {second_answer}")
 
