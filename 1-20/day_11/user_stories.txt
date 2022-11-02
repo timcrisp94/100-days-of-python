@@ -25,3 +25,6 @@ X. AAU I should have the option to hit or stay, until i choose to stay
 --blackjack should be a function
 --over_21 should be a function
 --game over
+
+scoping issue,
+need to move draw_card actions outside of draw() function
