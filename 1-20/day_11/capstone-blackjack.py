@@ -37,6 +37,7 @@ def game():
 
   def deal_cards():
     player_turn = True
+    computer_turn = False
     
     player_cards = [cards[random.choice(cards)], cards[random.choice(cards)]]
     player_score = sum(player_cards)
@@ -56,6 +57,7 @@ def game():
         draw_player_card()
       else:
         player_turn = False
+        computer_turn = True
         print(player_score)
 
     def draw_computer_card():
@@ -63,9 +65,13 @@ def game():
       computer_score = sum(computer_cards)
       print(computer_cards, computer_score)
 
-    if player_turn == False:
+    while player_turn == False and computer_turn == True:
+      computer_turn = False
       draw_computer_card()
-      return 
+      
+
+    if player_turn == False and computer_turn == False:
+      print("game over")
 
   deal_cards()
   
