@@ -94,5 +94,4 @@ while input(f"Do you want to play a game of blackjack? Type 'y' or 'n' ") == 'y'
   clear()
   game()
 
-  
 
