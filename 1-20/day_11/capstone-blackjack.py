@@ -56,48 +56,42 @@ def compare(player_score, computer_score):
 
 # game function
 def game():
-    
-
+  
   print(logo)
+  game_over = False
+  player_cards = []
+  computer_cards = []
 
-  # def deal_cards():      
-  #   player_cards = [cards[random.choice(cards)], cards[random.choice(cards)]]
-  #   player_score = update_score(0, player_cards)
-    
-  #   computer_cards = [cards[random.choice(cards)], cards[random.choice(cards)]]
-  #   computer_score = update_score(0, computer_cards)
-    
-  #   if over_21(player_score, player_cards):
-  #     print("bust")
-  #   elif over_21(computer_score, computer_cards):
-  #     print("bust")
-  #   else:
-  #     print(f"Your cards: {player_cards}, current score: {player_score}")
-  #     print(f"Computer's first card: {computer_cards[0]}")
-    
-  #   computer_turn = False
-    
-  #   while input(f"Do you want to hit? Type 'y' or 'n' ") == 'y':
-  #     player_cards.append(cards[random.choice(cards)])
-  #     player_score = update_score(player_score, player_cards)
-  #     if not over_21(player_score, player_cards):
-  #       print(player_score, player_cards)
-  #   else:
-  #     print(player_cards, player_score)
-  #     computer_turn = True
+  for _ in range(2):
+    player_cards.append(deal_card())
+    computer_cards.append(deal_card())
+  
 
-  #   while computer_turn == True and computer_score < 17:
-  #     computer_cards.append(cards[random.choice(cards)])
-  #     update_score(computer_score, computer_cards)
-  #     print(computer_cards, computer_score)
+  while not game_over:
+    player_score = update_score(player_cards)
+    computer_score = update_score(computer_cards)
+    print(f"Your cards: {player_cards}, current score: {player_score}")
+    print(f"Computer's first card: {computer_cards[0]}")
+    
+    if player_score == 0 or computer_score == 0 or player_score > 21:
+      game_over = True
+    else:
+      if input(f"Do you want to hit? Type 'y' or 'n' ") == 'y':
+        player_cards.append(deal_card())
+      else:
+        game_over = True
 
-  #     if computer_score > 17:
-  #       computer_turn = False
+    while game_over == True and computer_score < 17:
+      computer_cards.append(deal_card())
+      computer_score = update_score(computer_cards)
 
-  # deal_cards()
+    print(f"   Your final hand: {player_cards}, final score: {player_score}")
+    print(f"   Computer's final hand: {computer_cards}, final score: {computer_score}")
+    print(compare(player_score, computer_score))
 
 # ask user if they want to start the game
-if input(f"Do you want to play a game of blackjack? Type 'y' or 'n' ") == 'y':
+while input(f"Do you want to play a game of blackjack? Type 'y' or 'n' ") == 'y':
+  clear()
   game()
 
   
