@@ -38,47 +38,54 @@ def game():
   def deal_cards():  
     player_cards = [cards[random.choice(cards)], cards[random.choice(cards)]]
     player_score = sum(player_cards)
+    # computer_cards = [cards[random.choice(cards)], cards[random.choice(cards)]]
+    computer_cards = [3, 3]
+    computer_score = sum(computer_cards)      
 
-    
-    computer_cards = [cards[random.choice(cards)], cards[random.choice(cards)]]      
-    computer_score = sum(computer_cards)
+    # blackjack conditions
+    # over_21 conditions
 
     print(f"Your cards: {player_cards}, current score: {player_score}")
     print(f"Computer's first card: {computer_cards[0]}")
-
-  deal_cards()
-  player_turn = True
-  computer_turn = False
-
-  def draw_player_card():
-    player_cards.append(cards[random.choice(cards)])
-    player_score = sum(player_cards)
-    print(player_cards, player_score)
-  
-  while player_turn == True:
-    if input(f"Do you want to hit? Type 'y' or 'n' ") == 'y':
-      draw_player_card()
+    
+    computer_turn = False
+    
+    while input(f"Do you want to hit? Type 'y' or 'n' ") == 'y':
+      player_cards.append(cards[random.choice(cards)])
+      player_score = sum(player_cards)
+      print(player_cards, player_score)
     else:
-      player_turn = False
+      print(player_cards, player_score)
       computer_turn = True
-      print(player_score)
 
-  def draw_computer_card():
-    computer_score = sum(computer_cards)
-    if computer_score < 17:
+    while computer_turn == True and computer_score < 17:
       computer_cards.append(cards[random.choice(cards)])
       computer_score = sum(computer_cards)
-    else:
-      print(computer_score)
+      print(computer_cards, computer_score)
 
-  while player_turn == False and computer_turn == True:
-    computer_turn = False
-    draw_computer_card()    
+      if computer_score > 17:
+        computer_turn = False
+    
+    # def draw_computer_card():
+    #     computer_cards.append(cards[random.choice(cards)])
+    #     computer_score = sum(computer_cards)
 
-  if player_turn == False and computer_turn == False: 
-    if player_score > computer_score:
-      print(player_score, computer_score)
-      print("player wins")
+    # if player_turn == False and computer_turn == True:
+    #   if computer_score < 17:
+    #     draw_computer_card()
+    #   else:
+    #     computer_turn = False
+    #     print(computer_cards, computer_score)
+         
+
+  deal_cards()
+
+
+
+  # if player_turn == False and computer_turn == False: 
+  #   if player_score > computer_score:
+  #     print(player_score, computer_score)
+  #     print("player wins")
       
 
 
