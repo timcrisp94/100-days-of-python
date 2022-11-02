@@ -42,14 +42,15 @@ while not end_of_game:
     lives -= 1
     print(f"{guess} is not in the word. You have {lives} lives left.\n{stages[lives]}")
 
-  #join all the elements in the list and turn it into a string.
+  # join all the elements in the list and turn it into a string.
   print(f"{' '.join(display)}")
 
+  # winning condition
   if "_" not in display:
     end_of_game = True
     print("You win!")
 
+  # losing condition
   if lives == 0:
     end_of_game = True
     print(f"You lose! The word was {chosen_word}")
-
