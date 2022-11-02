@@ -37,7 +37,22 @@ def update_score(cards):
     cards.append(1)
   return sum(cards)
 
-
+# compare function
+def compare(player_score, computer_score):
+  if player_score == computer_score:
+    return "it's a draw"
+  elif player_score == 0:
+    return "Player wins with a blackjack!"
+  elif computer_score == 0:
+    return "Computer wins with a blackjack!"
+  elif player_score > 21:
+    return "Busted! You lose!"
+  elif computer_score > 21:
+    return "Computer busts! Player wins!"
+  elif player_score > computer_score:
+    return "Player wins!"
+  else:
+    return "Computer wins!"
 
 # game function
 def game():
