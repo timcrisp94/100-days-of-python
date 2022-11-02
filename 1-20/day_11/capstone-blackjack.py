@@ -23,15 +23,15 @@ def clear():
 # environment variables
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 player_cards = []
-player_score = []
+computer_cards = []
 
 player_score = 0
 computer_score = 0
 
 
+
 # game function
 def game():
-
 
   print(logo)
 
@@ -42,7 +42,7 @@ def game():
     player_score = sum(player_cards)
 
     computer_cards = [cards[random.choice(cards)], cards[random.choice(cards)]]
-    computer_score = sum(computer_cards)
+    
     print(f"Your cards: {player_cards}, current score: {player_score}")
     print(f"Computer's first card: {computer_cards[0]}")
     
@@ -58,12 +58,14 @@ def game():
         player_turn = False
         print(player_score)
 
-    # def draw_computer_card():
-    #   computer_cards.append(cards[random.choice(cards)])
-    #   computer_score = sum(computer_cards)
-    #   print(computer_cards, computer_score)
+    def draw_computer_card():
+      computer_cards.append(cards[random.choice(cards)])
+      computer_score = sum(computer_cards)
+      print(computer_cards, computer_score)
 
-    
+    if player_turn == False:
+      draw_computer_card()
+      return 
 
   deal_cards()
   
