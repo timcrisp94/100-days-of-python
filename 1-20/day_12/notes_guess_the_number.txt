@@ -1,0 +1,22 @@
+AAU I should be greeted with a welcome message and instructions
+-welcome, instructions
+-number = randint()
+--print number (for dev)
+
+AAU I should be able to choose a difficulty
+-input, "choose easy or hard"
+--if easy: guesses = 10, print "You have 10 attempts remaining to guess the number."
+--else: guesses = 5, print "You have 5 ..."
+
+AAU I should be able to make a guess
+-input, "make a guess"
+
+AAU I should be told if my guess was correct or incorrect
+-print "Make a guess: {guess}
+-if guess not == number:
+  guesses -= 1
+  -if guess < number: 
+    print (f"too low\nGuess again\nYou have {guesses} remaining"
+    (back to make a guess -while loop-)
+  -else: print (f"too high\nGuess again\nYou have {guesses} remaining")
+-else print "You got it! Answer was {number}."
