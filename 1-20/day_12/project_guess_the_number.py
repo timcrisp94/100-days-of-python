@@ -14,9 +14,17 @@ if difficulty[0] == 'e':
 else:
   guesses = 5
 
+print(f"You have {guesses} attempts remaining to guess the number")
 
-
-# number = random.randint(1, 101)
-
-input("Make a guess: ")
-# if 
+while guesses > 0:
+  guess = int(input("Make a guess: "))
+  if not guess == number:
+    guesses -= 1
+    if guess < number:
+      print("Too low")
+    else:
+      print("Too high")
+    print(f"Guess again.\nYou have {guesses} attempts remaining to guess the number")
+  else:
+    guesses = 0
+    print (f"You got it! The answer was {number}")

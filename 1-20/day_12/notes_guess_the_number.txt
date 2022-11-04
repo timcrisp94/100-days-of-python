@@ -1,12 +1,12 @@
-AAU I should be greeted with a welcome message and instructions
--welcome, instructions
--number = randint()
---print number (for dev)
+X AAU I should be greeted with a welcome message and instructions
+X -welcome, instructions
+X -number = randint()
+X  --print number (for dev)
 
-AAU I should be able to choose a difficulty
--input, "choose easy or hard"
---if easy: guesses = 10, print "You have 10 attempts remaining to guess the number."
---else: guesses = 5, print "You have 5 ..."
+X AAU I should be able to choose a difficulty
+X -input, "choose easy or hard"
+X --if easy: guesses = 10, print "You have 10 attempts remaining to guess the number."
+X --else: guesses = 5, print "You have 5 ..."
 
 AAU I should be able to make a guess
 -input, "make a guess"
