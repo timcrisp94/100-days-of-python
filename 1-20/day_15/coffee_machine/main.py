@@ -59,8 +59,12 @@ def confirm_transaction(money_received, drink_cost):
         print("I'm sorry, that's not enough money")
         return False
 
-def make_coffee(drink, order_ingredients):
-    
+# make_coffee function to update resources
+def make_coffee(drink_name, order_ingredients):
+    for item in order_ingredients:
+        resources[item] -= order_ingredients[item]
+    print(f"Here is your {drink_name}. Enjoy!")
+
 
 is_on = True
 
@@ -74,3 +78,9 @@ while is_on:
         print(f"Milk: {resources['milk']}")
         print(f"Coffee: {resources['coffee']}")
     else:
+        drink = MENU[selection]
+        if check_resources(drink["ingredients"]):
+            payment = process_coins()
+            if confirm_transaction(payment, drink["cost"]):
+                make_coffee(selection, drink["ingredients"])
+
