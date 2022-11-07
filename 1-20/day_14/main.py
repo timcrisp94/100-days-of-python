@@ -28,6 +28,7 @@ def check_answer(guess, person_a_followers, person_b_followers):
 
 
 def game():
+  cls
   print(logo)
   score = 0
   game_over = False
@@ -47,10 +48,27 @@ def game():
       print(vs)
       print(f"Compare B: {format_data(person_b)}")
 
+      guess = input("Who has more followers? Type 'A' or 'B': ").lower()
+      a_follower_count = person_a["follower_count"]
+      b_follower_count = person_b["follower_count"]
 
+      is_correct = check_answer(guess, a_follower_count, b_follower_count)
 
-# print(logo)
-# print(vs)
-# print(data[0])
+      cls()
+      print(logo)
+
+      if is_correct:
+        score += 1
+        print(f"Correct! Current score: {score}")
+      else:
+        game_over = True
+        print(f"Sorry that's wrong. Final score: {score}")
+  
+  
+  play_again = input("Want to play again? Type 'Y' or 'N': ").lower()
+  if play_again == "y":
+    game()
+    cls()
+  
 
 game()
