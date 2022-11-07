@@ -44,8 +44,23 @@ def process_coins():
     print("Please insert coins")
     total = int(input("how many quarters?: ")) * .25
     total += int(input("how many dimes?: ")) * .10
-    total = int(input("how many nickels?: ")) * .05
-    total = int(input("how many pennies?: ")) * .01
+    total += int(input("how many nickels?: ")) * .05
+    total += int(input("how many pennies?: ")) * .01
+    return total
+
+def confirm_transaction(money_received, drink_cost):
+    if money_received >= drink_cost:
+        change = round(money_received - drink_cost, 2)
+        print(f"Here is ${change} in change")
+        global profit
+        profit += drink_cost
+        return True
+    else:
+        print("I'm sorry, that's not enough money")
+        return False
+
+def make_coffee(drink, order_ingredients):
+    
 
 is_on = True
 
@@ -58,3 +73,4 @@ while is_on:
         print(f"Water: {resources['water']}")
         print(f"Milk: {resources['milk']}")
         print(f"Coffee: {resources['coffee']}")
+    else:
