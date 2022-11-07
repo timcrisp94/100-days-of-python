@@ -1,0 +1,251 @@
+you are going to spend building an exciting game called Higher or Lower.
+2
+
+And if you want to have a go at it, just go over to higher
+3
+
+lowergame.com and click on classic.
+4
+
+
+
+- keep going until you get it wrong.
+  - now I've gotten it wrong and it tells me how many I got right as my score
+  - and I can play again if I wish to. 
+
+OURS
+
+1. Instead of comparing average monthly searches on Google,
+we're comparing who has more followers on Instagram.
+
+Ex. In this case, it's comparing Neymar, a footballer from Brazil against Chloe Kardashian. 
+So I think it's 'B', I could be wrong and I'm wrong.
+So here we're comparing
+Rihanna a musician and businesswoman from Barbados against Shakira.
+So I'm going to guess probably Rihanna and I get it right,
+so I get to score one point. And this game continues on and on until you get it wrong, 
+
+
+The aim of the game is to try and stay alive for as long as possible and score
+as high as possible by thinking about who might be more popular than the other.
+
+You are going to be coding up this game entirely by yourself.
+You're going to apply everything you've learned so far to understand how this
+game works by playing it quite a few times,
+going to this URL and looking at all the specific nuances;
+what happens if you get it wrong, what happens if you get it right,
+and you're gonna write the code all yourself,
+and you're probably going to need your skills of debugging to fix some problems
+as you go along as well.
+
+
+So the approach I want you to take is first think about the problem and then
+break down a large problem into smaller problems.
+This way you can tackle them one by one, and it won't be so intimidating.
+
+Now, step 2 is to look at those problems and make a
+to-do list. Given the items on the to-do list,
+you're going to pick the one that you think is the easiest to begin.
+
+Let's say that, uhm, maybe generating a random number.
+
+
+
+
+That's pretty simple, right? Well, in this to-do list,
+52
+
+that's the first one we're going to tackle. So in this case,
+53
+
+we're building a very simple dice game, right?
+54
+
+The game that you were going to be building is a lot more complex,
+55
+
+it won't just have three to-dos. But the idea is the same.
+56
+
+Once you pick the task that you think is the easiest, generating a random number,
+57
+
+then you gotta take that problem
+58
+
+and you're going to break it down into comments in your code.
+59
+
+So just as you've seen me do it for our previous project,
+60
+
+you are going to do the same thing.
+61
+
+You're going to take that problem of generating a random number and then split
+62
+
+it into different pieces, right?
+63
+
+First, you probably have to import the random module and then you probably have
+64
+
+to use a function like randint to generate
+65
+
+a random integer. So now that you've taken a big problem and broken it apart into
+66
+
+smaller problems, taking the easier smaller problem
+67
+
+and break it down into comments in your code,
+68
+
+then you are ready to start writing some code.
+69
+
+So write code beneath the comments, run your code,
+70
+
+make sure that it does what you want it to do. And if it doesn't, then fix the code.
+71
+
+And once you've done that, then it's back to the beginning,
+72
+
+write more code under the comments, run more code,
+73
+
+fix more code until you've managed to cross out that task.
+74
+
+And then its a case of tackling the next one that you think you can attempt.
+75
+
+So this is the real skill of programmers; taking something that's immensely
+76
+
+complex and difficult, breaking it down into smaller problems,
+77
+
+breaking it down further,
+78
+
+and then tackling them from the easiest to the hardest and doing this one by
+79
+
+one. Eventually by the end, you end up with your final product.
+80
+
+This is what I want you to do.
+81
+
+So the first thing you have to do is the head over to the final version of the
+82
+
+game,
+83
+
+play it at least 10 times just so you understand exactly how it works and then
+84
+
+pull up the starting code for the day, which is the higher-lower-start,
+85
+
+and go ahead and fork your own copy of it.
+86
+
+Now you'll notice that there's three files in the starting code. One is the art
+87
+
+.py that contains the logo and the versus symbol that shows up when it asks you
+88
+
+to compare.
+89
+
+So compare A, Christiano Ronaldo versus B, Vin Diesel.
+90
+
+And these are the art that you're going to display. And finally,
+91
+
+and probably most importantly, there is a file called game data. Now game data
+92
+
+only a single variable.
+93
+
+It's a list of dictionary entries.
+94
+
+Each of these dictionaries have four keys and the keys are the same for
+95
+
+all of the entries. They've got a name, the name of the account,
+96
+
+the follower count,
+97
+
+so how many followers in millions does that account have.
+98
+
+So for example, Christiano Ronaldo has 215 million followers,
+99
+
+at least at the time when I compiled the data. And then it has a description,
+100
+
+he's a footballer or this is a social media platform,
+101
+
+she's a musician and actress. And finally the country that they're from.
+102
+
+You're going to use all of these pieces of information to construct a comparison
+103
+
+line like this, compare A: Cristiano Ronaldo
+104
+
+a football from Portugal. We have B.
+105
+
+And you're going to ask the user to guess who has more followers. And if they get
+106
+
+it right, they get to keep playing, where A now becomes the previous B,
+107
+
+so Vin Diesel who you used to be B now becomes A,
+108
+
+and then you get to compare against a new person and it keeps on going until they
+109
+
+get it wrong. That is the task ahead of you
+110
+
+and it's not going to be easy, but I think you can do it.
+111
+
+So give this project at least an hour. You'll need to write the code,
+112
+
+you will need to fix problems, you'll need to debug,
+113
+
+you will need to test it quite a few times. But by the end of it,
+114
+
+you will emerge a stronger programmer
+115
+
+I promise. So good luck and make sure you have lots of struggle and I'll see you
+116
+
+on the other side.
+
