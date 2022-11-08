@@ -33,6 +33,15 @@ resources = {
 # global profit variable
 profit = 0
 
+# print resources function
+def print_resources():
+  for item in resources:
+    name = item.upper()
+    if item == "coffee":
+      print(print(f"{name}: {resources[item]} g"))
+    else:
+      print(f"{name}: {resources[item]} ml")
+
 
 # TODO check resources
 """
@@ -59,28 +68,37 @@ def accept_coins():
 # compare total from accept_coins to cost of drink
 def complete_transaction(total_paid, total_cost):
   if total_paid >= total_cost:
-    change = total_paid - total_cost
+    change = round(total_paid - total_cost, 2)
     print(f"Here is ${change} in change.")
+    global profit 
+    profit += total_cost
+    return True
   else:
     print("I'm sorry, that's not enough")
-# # ask user what drink they would like
-# choice = input("What would you like? (espresso, latte, cappuccino): ")
+    return False
+
 
 # TODO make drink
-def make_drink(drink_ordered):
-  print(f"Here is your {drink_ordered}. Enjoy!")
+def make_drink(drink_name, drink_ingredients):
+  for item in drink_ingredients:
+    resources[item] -= drink_ingredients[item]
+  print(f"Here is your {drink_name}. Enjoy!")
 
 
+# ask user what drink they would like
 
-
-# is_on = True
-# # while is_on:
-
-#   # TODO print report
-# if choice == "print report":
-#   print(resources)
-# elif choice == "off":
-#   is_on = False
-# else:
-#   check_resources(choice)
+is_on = True
+while is_on:
+  choice = input("What would you like? (espresso, latte, cappuccino): ")
+  # TODO print report
+  if choice == "off":
+    is_on = False
+  elif choice == "print report":
+    print_resources()
+  else:
+    drink = MENU[choice]
+    if check_resources(drink["ingredients"]):
+      payment = accept_coins()
+      if complete_transaction(payment, drink["cost"]):
+        make_drink(choice, drink["ingredients"])
 
