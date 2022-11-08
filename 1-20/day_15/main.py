@@ -85,10 +85,10 @@ def make_drink(drink_name, drink_ingredients):
   print(f"Here is your {drink_name}. Enjoy!")
 
 
-# ask user what drink they would like
 
 is_on = True
 while is_on:
+  # ask user what drink they would like
   choice = input("What would you like? (espresso, latte, cappuccino): ")
   # TODO print report
   if choice == "off":
@@ -98,7 +98,9 @@ while is_on:
   else:
     drink = MENU[choice]
     if check_resources(drink["ingredients"]):
+      # initiate payment
       payment = accept_coins()
+      # confirm payment
       if complete_transaction(payment, drink["cost"]):
         make_drink(choice, drink["ingredients"])
 
