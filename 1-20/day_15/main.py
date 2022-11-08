@@ -30,25 +30,22 @@ resources = {
     "coffee": 100,
 }
 
-# TODO print report
+# global profit variable
+profit = 0
+
+
 # TODO check resources
+"""
+# check resources to confirm drink can be made
+"""
+def check_resources(drink_ingredients):  
+  for key in drink_ingredients:
+    if drink_ingredients[key] > resources[key]:
+        print(f"I'm sorry there is not enough {key}")
+        return False
+  return True
+
 # TODO process coins
-# TODO check if enough money
-# TODO make drink
-
-# scripts
-
-# "Please insert coins."
-# 
-# "How many dimes?: "
-# "How many nickels?: "
-# "How many nickels?: "
-# "Here is ${change} in change."
-# "Here is your {drink}. Enjoy"
-
-# ask user what drink they would like
-choice = input("What would you like? (espresso, latte, cappuccino): ")
-
 # ask user to insert coins
 def accept_coins():
   total = int(input("How many quarters?: ")) * .25
@@ -57,6 +54,33 @@ def accept_coins():
   total += int(input("How many pennies?: ")) * .01
   return total
 
-  print(total)
 
-accept_coins()
+# TODO check if enough money
+# compare total from accept_coins to cost of drink
+def complete_transaction(total_paid, total_cost):
+  if total_paid >= total_cost:
+    change = total_paid - total_cost
+    print(f"Here is ${change} in change.")
+  else:
+    print("I'm sorry, that's not enough")
+# # ask user what drink they would like
+# choice = input("What would you like? (espresso, latte, cappuccino): ")
+
+# TODO make drink
+def make_drink(drink_ordered):
+  print(f"Here is your {drink_ordered}. Enjoy!")
+
+
+
+
+# is_on = True
+# # while is_on:
+
+#   # TODO print report
+# if choice == "print report":
+#   print(resources)
+# elif choice == "off":
+#   is_on = False
+# else:
+#   check_resources(choice)
+
