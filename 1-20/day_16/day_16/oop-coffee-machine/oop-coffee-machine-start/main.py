@@ -10,28 +10,13 @@ from money_machine import MoneyMachine
 # 5. Make Drink
  """
 
-#
+#imported functions
 coffee_machine = CoffeeMaker()
 cash_register = MoneyMachine()
 drink_menu = Menu()
 
-spro = drink_menu.find_drink("espresso")
-cap = drink_menu.find_drink("cappuccino")
-tay = drink_menu.find_drink("latte")
+is_on = True
 
-
-def take_order(drink_order):
-    if drink_order == "print report":
-        coffee_machine.report()
-    elif drink_order == "off":
-        print("Goodbye")
-    else:
-        if coffee_machine.is_resource_sufficient(drink_order):
-            return True
-        else:
-            return False
-
-
-order = input("What would you like to drink? latte/espresso/cappuccino?: ")
-
-take_order(order)
+while is_on:
+    options = drink_menu.get_items()
+    order = input("What would you like to drink? espresso/cappuccino/latte")
