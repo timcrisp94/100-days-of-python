@@ -19,7 +19,7 @@ is_on = True
 
 while is_on:
     options = menu.get_items()
-    order = input("What would you like to drink? espresso/cappuccino/latte?: ")
+    order = input(f"What would you like to drink? {options}: ")
     if order == "print report":
         coffee_machine.report()
         cash_register.report()
