@@ -1,28 +1,36 @@
-from turtle import Turtle, Screen
+from turtle import Screen, Turtle
 
-timmy_the_turtle = Turtle()
-timmy_the_turtle.shape("square")
-timmy_the_turtle.color("red")
+import heroes
+
+print(heroes.gen())
+
+
+tim = Turtle()
+tim.shape("square")
+tim.color("red")
 
 # draw a square
 def draw_square(turtle):
   turtle.forward(100)
 
-  for i in range(0, 3):
-    timmy_the_turtle.left(90)
-    timmy_the_turtle.forward(100)
-
-  return turtle
+  for i in range(3):
+    turtle.left(90)
+    turtle.forward(100)
 
 
-# draw_square(timmy_the_turtle)
+# draw_square(tim)
 
 
+# draw a dashed line
+def draw_dashed_line(turtle):
+  for i in range(10):
+    turtle.forward(15)
+    turtle.penup()
+    turtle.forward(5)
+    turtle.pendown()
 
 
-
-
-
+# draw_dashed_line(tim)
 
 
 
