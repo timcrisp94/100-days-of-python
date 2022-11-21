@@ -7,16 +7,13 @@ screen.bgcolor("black")
 screen.title("Snake")
 
 # Snake
-segment_one = Turtle("square")
-segment_one.color("white")
+starting_positions = [(0, 0), (-40, 0)]
 
-segment_two = Turtle("square")
-segment_two.color("white")
-segment_two.setposition(-10.00, 0.00)
+for position in starting_positions:
+    new_segment = Turtle("square")
+    new_segment.color("white")
+    new_segment.goto(position)
 
-segment_three = Turtle("square")
-segment_three.color("white")
-segment_three.setposition(10.00, 0.00)
 
 
 
