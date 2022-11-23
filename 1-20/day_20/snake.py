@@ -26,3 +26,4 @@ class Snake:
         # last segment go to second to last segment
             self.segments[seg_num].goto(new_x, new_y)
         self.segments[0].forward(MOVE_DISTANCE)
+
